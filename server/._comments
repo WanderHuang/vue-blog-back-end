@@ -1,0 +1,5 @@
+# / 根目录
+#---cors.js 提供跨域功能
+#---mongo.js 提供mongodb数据库连接
+#---router.js 提供路由分发功能
+#---/handler 处理器目录
