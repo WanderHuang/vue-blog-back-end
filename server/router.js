@@ -1,27 +1,30 @@
+//工具类
 const chalk = require('chalk')
-const Router = require('koa-router')
-const homeHandler = require('./handler/homeHandler')
+const fileManager = require('./file/FileManager')
+//路由器
+const homeRouter = require('./routes/home')
+const blogRouter = require('./routes/blog')
 
 
-
-// queryAll 返回一个promise 供中间件调用
-const queryAllArticles = (ctx, next) => {
-  return new Promise((resolve, reject) => {
-    homeHandler.queryAllArticles(ctx.query.page).then(function(data) {
-      ctx.body = data
-      console.log(chalk.cyan('------------------ctx body--------------------'))
-      console.log(chalk.cyan(data))
-      console.log(chalk.cyan('---------------queryAllArticles---------------'))
-      resolve(data)
-      next()
-    })
-  })
-}
 
 // 建立路由表
+const Router = require('koa-router')
 const router = new Router();
-router.get('/home/articles/queryAll', queryAllArticles, (ctx, next) => {
+
+//home
+router.get('/home/articles/queryAll', homeRouter.queryAllArticles, (ctx, next) => {
   console.log('another action should happen...')
+})
+
+//blog
+router.get('/blog/articles/get', blogRouter.queryByLocation, async (ctx, next) => {
+  console.log('ready for getting file > ' + ctx._data_file._location)
+  if(!ctx._data_file.location) {
+    ctx.body = 'Nothing found(404) - TODO redirect to 404'
+  }else {
+    const file = await fileManager.readFileByPath(ctx._data_file.location)
+    ctx.body = file
+  }
 })
 
 exports.router = router;
