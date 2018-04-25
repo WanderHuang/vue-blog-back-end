@@ -6,6 +6,8 @@ const ARTICLES = 'home_articles'
 
 const sche = new mongoose.Schema({
   page: Number,
+  total: Number,
+  totalPage: Number,
   items: []
 })
 const model = mongoose.model(ARTICLES, sche)
