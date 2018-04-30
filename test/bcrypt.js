@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs')
-const hash = bcrypt.hashSync("wander", bcrypt.genSaltSync(10))
+const hash = bcrypt.hashSync("huangjunjie", bcrypt.genSaltSync(10))
 console.log('> '+ hash)
 
 console.log('--------------------')
 
-console.log(bcrypt.compareSync("wander", hash))
+console.log(bcrypt.compareSync("huangjunjie", hash))

@@ -178,5 +178,6 @@
     "name" : "wander",
     "password" : "$2a$05$Sk5v2wBe0ipBmoecPrFCiu2CaMPd621ky4B0H41Qb4N/5D6vuwgsS",
     "type" : 1,
-    "email" : "junjiehuang@yeah.net"
+    "email" : "junjiehuang@yeah.net",
+    "avatar": "wander"
 }

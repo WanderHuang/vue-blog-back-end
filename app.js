@@ -34,8 +34,8 @@ app.use(logger())
 //报文转换
 app.use(bodyParser())
 //jwt
-app.use(jwtKoa(config.secret).unless({
-        path: [/^\/login/] //数组中的路径不需要通过jwt验证
+app.use(jwtKoa({secret: 'shared-secret', passthrough:true}).unless({
+        path: [/^\/server\/login/] //数组中的路径不需要通过jwt验证
     }))
 //路由
 app.use(router.routes())

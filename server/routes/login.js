@@ -28,6 +28,7 @@ const _checkUser = async (user, isPassed) => {
         const token = jwt.sign(userToken, config.secret, {expiresIn: '1h'})
         isPassed = true
         success.token = token
+        success.avatar = dbUser.avatar
       } else {
         fail.message = 'wrong password'
       }
@@ -47,6 +48,7 @@ const checkUser = async (ctx, next) => {
   let isPassed = false
   isPassed = await _checkUser(user, isPassed)
   ctx.body = isPassed ? success : fail
+  ctx.cookies.set('token', success.token)
   await next()
 }
 

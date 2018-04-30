@@ -6,6 +6,7 @@ const map = require('../config/router-map.json')
 const loginRouter = require('./routes/login')
 const homeRouter = require('./routes/home')
 const blogRouter = require('./routes/blog')
+const imageRouter = require('./routes/image')
 
 
 
@@ -32,6 +33,11 @@ router.get(map.blog.queryArticle, blogRouter.queryByLocation, async (ctx, next) 
     const file = await fileManager.readFileByPath(ctx._data_file.location)
     ctx.body = file
   }
+})
+
+// static resources
+router.get(map.image.getImage, imageRouter.getImage, (ctx, next) => {
+  console.log('query image finished, another action should happen...')
 })
 
 exports.router = router;

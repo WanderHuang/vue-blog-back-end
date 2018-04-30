@@ -1,11 +1,14 @@
 {
   "login": {
-    "checkUser": "/login/checkUser"
+    "checkUser": "/server/login/checkUser"
   },
   "home": {
-    "queryAllArticles": "/home/articles/queryAll"
+    "queryAllArticles": "/server/home/articles/queryAll"
   },
   "blog": {
-    "queryArticle": "/blog/articles/get"
+    "queryArticle": "/server/blog/articles/get"
+  },
+  "image": {
+    "getImage": "/server/static/image/get"
   }
 }
