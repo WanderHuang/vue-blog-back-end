@@ -1,0 +1,11 @@
+{
+  "login": {
+    "checkUser": "/login/checkUser"
+  },
+  "home": {
+    "queryAllArticles": "/home/articles/queryAll"
+  },
+  "blog": {
+    "queryArticle": "/blog/articles/get"
+  }
+}

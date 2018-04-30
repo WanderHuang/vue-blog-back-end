@@ -5,6 +5,8 @@ const config = require('./config/app.json')
 const chalk = require('chalk')
 const logger = require('koa-logger')
 const bodyParser = require('koa-bodyparser')
+const jwt = require('jsonwebtoken')
+const jwtKoa = require('koa-jwt')
 
 // 数据库初始化
 const mongoose = require('mongoose')
@@ -26,12 +28,15 @@ const {router} = require('./server/router')
 //开启服务器
 const app = new koa()
 //跨域
-console.log(cors)
 app.use(cors)
 //日志
 app.use(logger())
 //报文转换
 app.use(bodyParser())
+//jwt
+app.use(jwtKoa(config.secret).unless({
+        path: [/^\/login/] //数组中的路径不需要通过jwt验证
+    }))
 //路由
 app.use(router.routes())
 app.use(router.allowedMethods())
