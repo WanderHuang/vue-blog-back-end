@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 // promise
 mongoose.Promise = require('bluebird')
 
-const ARTICLES = 'home_articles'
+const ARTICLES = 'prearticles'
 
 const sche = new mongoose.Schema({
   page: Number,
@@ -10,6 +11,9 @@ const sche = new mongoose.Schema({
   totalPage: Number,
   items: []
 })
+
+sche.plugin(mongoosePaginate)
+
 const model = mongoose.model(ARTICLES, sche)
 
 exports.model = model

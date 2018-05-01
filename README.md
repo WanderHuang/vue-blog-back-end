@@ -9,3 +9,12 @@
 * `koa-static` 处理koa中的静态资源  
 * `koa-logger` 日志处理  
 * `koa-passport` 认证鉴权  
+* `bcryptjs` 文本加密  
+* `bluebird` promise实现  
+* `chalk` 终端彩色文字输出  
+* `jsonwebtoken` token  
+* `koa-jwt` koa-jwt的token鉴权  
+* `log4js` node端日志  
+* `mongodb` NoSQL数据库  
+* `mongoose` 连接mongodb  
+* `mongoose-paginate` mongoose分页操作  

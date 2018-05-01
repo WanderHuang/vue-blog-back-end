@@ -1,6 +1,6 @@
 # 提供实体模型(目前为mongoose模型)
 
-# home_article
+# home_article @deprecated
 
 
 {
@@ -180,4 +180,31 @@
     "type" : 1,
     "email" : "junjiehuang@yeah.net",
     "avatar": "wander"
+}
+
+#preartical
+{
+    "title" : "第一页测试",
+    "author" : "wander",
+    "authorAddress" : "/person/wander/home",
+    "date" : "2018-04-21",
+    "location" : "/blog/20180421/name_hash",
+    "tags" : [ 
+        {
+            "tag" : "贸易战",
+            "link" : "/blog/news/1",
+            "color" : "theme-1-color-purple"
+        }, 
+        {
+            "tag" : "大豆",
+            "link" : "/blog/life/1",
+            "color" : "theme-1-color-purple"
+        }, 
+        {
+            "tag" : "中国",
+            "link" : "/blog/tech/1",
+            "color" : "theme-1-color-blue"
+        }
+    ],
+    "content" : "中国针对美国的大豆等农副产品征收关税..."
 }

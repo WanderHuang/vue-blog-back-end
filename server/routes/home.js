@@ -10,9 +10,6 @@ const queryAllArticles = (ctx, next) => {
     homeHandler.queryAllArticles(ctx.query.page)
       .then(function(data) {
         ctx.body = data
-        console.log(chalk.cyan('------------------ctx body--------------------'))
-        console.log(chalk.cyan(data))
-        console.log(chalk.cyan('---------------queryAllArticles---------------'))
         resolve(data)
         next()
       })
