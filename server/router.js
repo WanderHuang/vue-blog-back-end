@@ -36,7 +36,11 @@ router.get(map.blog.queryArticle, blogRouter.queryByLocation, async (ctx, next) 
 })
 
 // static resources
-router.get(map.image.getImage, imageRouter.getImage, (ctx, next) => {
+router.get(map.image.getImagePng, imageRouter.getImagePng, (ctx, next) => {
+  console.log('query image finished, another action should happen...')
+})
+
+router.get(map.image.getImageWall, imageRouter.getImageWall, (ctx, next) => {
   console.log('query image finished, another action should happen...')
 })
 

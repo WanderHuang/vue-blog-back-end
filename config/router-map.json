@@ -9,6 +9,7 @@
     "queryArticle": "/server/blog/articles/get"
   },
   "image": {
-    "getImage": "/server/static/image/get"
+    "getImagePng": "/server/static/image/get",
+    "getImageWall": "/server/static/image/wall"
   }
 }
