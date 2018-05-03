@@ -18,3 +18,4 @@
 * `mongodb` NoSQL数据库  
 * `mongoose` 连接mongodb  
 * `mongoose-paginate` mongoose分页操作  
+* `jimp` 图片操作 
